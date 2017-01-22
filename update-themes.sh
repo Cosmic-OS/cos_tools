@@ -59,11 +59,11 @@ function copy_all () {
   for i in `seq 0 $(( ${#array[@]} - 1 ))`
   do
     cd $WORKING_DIR/packages/apps
-    cp -r ${array[i]} $WORKING_DIR/Theme-Resources/packages/apps/
+    cp -r ${array[i]} $WORKING_DIR/cos_tools/Theme-Resources/packages/apps/
   done
 }
 
-declare -a root=('Theme-Resources' 'abi' 'bionic' 'art' 'bootable' 'build' 'dalvik' 'development' 'device' 'external' 'frameworks' 'hardware' 'kernel' 'libcore' 'libnativehelper' 'manifest' 'ndk' 'out' 'packages' 'pdk' 'prebuilts'
+declare -a root=('cos_tools' 'abi' 'bionic' 'art' 'bootable' 'build' 'dalvik' 'development' 'device' 'external' 'frameworks' 'hardware' 'kernel' 'libcore' 'libnativehelper' 'manifest' 'ndk' 'out' 'packages' 'pdk' 'prebuilts'
                  'sdk' 'system' 'tools' 'vendor')
 
 declare -a frameworks=('api' 'cmds' 'data' 'docs' 'drm' 'graphics' 'include' 'keystore' 'libs' 'location' 'media' 'native' 'nfc-extras' 'obex' 'opengl' 'policy' 'rs' 'samples' 'sax' 'security-bridge' 'services' 'telecomm'
@@ -87,8 +87,8 @@ declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'at
 
 declare -a core=('java' 'jni' 'tests')
 
-declare -a theme_packages=('Apollo' 'Browser' 'Calculator' 'Calendar' 'CalendarWidget' 'Camera2' 'Contacts' 'ContactsCommon' 'DSPManager' 'DU-About' 'DU-Tweaks' 'DU-Updater' 'DeskClock' 'Dialer' 'Email' 'Gallery2' 'InCallUI'
-                           'Launcher3' 'LockClock' 'Mms' 'OnniSwitch' 'PhoneCommon' 'Settings' 'Stk' 'ThemeChooser')
+declare -a theme_packages=('Browser' 'Calculator' 'Calendar' 'SnapdragonCamera' 'Contacts' 'ContactsCommon' 'DUI' 'DeskClock' 'Dialer' 'Email' 'Gallery2'
+                           'Launcher3' 'Messaging' 'OmniSwitch' 'PhoneCommon' 'Settings' 'Stk')
 
 cd $WORKING_DIR
 echo "Removing files so we can clean sync"
@@ -105,7 +105,7 @@ else
   exit 1
 fi
 echo "Cloning Theme Resources repo"
-git clone https://github.com/DirtyUnicorns/Theme-Resources.git
+git clone https://github.com/Cosmic-OS/cos_tools.git
 echo "Removing unneeded files"
 cd frameworks/base
 delete_useless ${frameworks[@]}
@@ -125,14 +125,14 @@ cd res
 delete_useless ${res[@]}
 cd values
 delete_useless ${values[@]}
-rm -rf  $WORKING_DIR/Theme-Resources/frameworks
+rm -rf  $WORKING_DIR/cos_tools/Theme-Resources/frameworks
 cd $WORKING_DIR
 process_all ${theme_packages[@]}
 echo "Cleaning target folders"
-rm -rf Theme-Resources/packages
-mkdir Theme-Resources/packages
-mkdir Theme-Resources/packages/apps
-mkdir Theme-Resources/frameworks
-echo "Copying all files to $WORKING_DIR/Theme-Resources"
+rm -rf cos_tools/Theme-Resources/packages
+mkdir cos_tools/Theme-Resources/packages
+mkdir cos_tools/Theme-Resources/packages/apps
+mkdir cos_tools/Theme-Resources/frameworks
+echo "Copying all files to $WORKING_DIR/cos_tools/Theme-Resources"
 copy_all ${theme_packages[@]}
-cp -r $WORKING_DIR/frameworks/base/core $WORKING_DIR/frameworks/base/packages $WORKING_DIR/Theme-Resources/frameworks
+cp -r $WORKING_DIR/frameworks/base/core $WORKING_DIR/frameworks/base/packages $WORKING_DIR/cos_tools/Theme-Resources/frameworks
