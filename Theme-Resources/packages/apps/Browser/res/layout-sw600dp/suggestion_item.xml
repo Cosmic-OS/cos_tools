@@ -51,16 +51,16 @@
                 android:id="@android:id/text1"
                 style="@style/SuggestionLineMedium"
                 android:maxLines="1"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
+                android:textColor="@color/suggestion_item_text_color"
+                android:textColorHint="@color/suggestion_item_hint_text_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@android:id/text2"
                 style="@style/SuggestionLineSmall"
                 android:singleLine="true"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
+                android:textColor="@color/suggestion_item_secondary_text_color"
+                android:textColorHint="@color/suggestion_item_secondary_hint_text_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -68,18 +68,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/divider"
-        android:scaleType="center"
-        android:background="@*android:drawable/list_divider_holo_light"
-        />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/icon2"
         android:scaleType="center"
         android:src="@drawable/ic_querybuilder"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:paddingRight="@dimen/suggest_item_padding"
         android:paddingLeft="@dimen/suggest_item_padding"
-         />
+        />
 </LinearLayout>

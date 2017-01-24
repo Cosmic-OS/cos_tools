@@ -14,25 +14,11 @@
      limitations under the License.
 -->
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cities"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
-        <include layout="@layout/main_clock_frame"
-            android:id="@+id/main_clock_left_pane"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top" />
-        <ListView
-            android:id="@+id/cities"
-            android:clickable="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:dividerHeight="8dip"
-            android:clipToPadding="false" />
-    </LinearLayout>
-</FrameLayout>
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:paddingEnd="@dimen/clock_side_padding_reduced"
+    android:paddingStart="@dimen/clock_side_padding" />

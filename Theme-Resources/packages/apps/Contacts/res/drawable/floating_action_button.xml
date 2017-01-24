@@ -15,7 +15,10 @@
      limitations under the License.
 -->
 
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/contacts_accent_color">
-    <item android:drawable="@drawable/fab_blue" />
-</ripple>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+     <item android:state_pressed="true">
+          <shape android:shape="oval">
+               <solid android:color="@color/primary_color_dark" />
+          </shape>
+     </item>
+</selector>

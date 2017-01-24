@@ -18,49 +18,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/alarm_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:baselineAligned="false" >
+        android:baselineAligned="false"
+        android:orientation="horizontal">
 
-        <ListView
-            android:id="@+id/alarms_list"
-            android:layout_width="0dip"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/alarms_recycler_view"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:dividerHeight="10dip"
-            android:scrollbars="none"
-            android:divider="@null"
-            android:clipToPadding="false" />
+            android:clipToPadding="false"
+            android:descendantFocusability="beforeDescendants"
+            android:fadingEdgeLength="0dp"
+            android:paddingBottom="@dimen/list_bottom_spacing"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical" />
+
     </LinearLayout>
 
-    <TextView
-            android:id="@+id/alarms_empty_view"
-            style="@style/no_alarms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/no_alarms"
-            android:drawableTop="@drawable/ic_noalarms_black"
-            android:textColor="@color/no_alarms_text_color"
-            android:text="@string/no_alarms" />
- 
-   <FrameLayout android:id="@+id/undo_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" >
-        <com.android.deskclock.widget.ActionableToastBar
-            android:id="@+id/undo_bar"
-            android:layout_width="match_parent"
-            android:layout_height="48dip"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="96dp"
-            android:paddingStart="@dimen/alarm_undo_bar_horizontal_margin"
-            android:paddingEnd="@dimen/alarm_undo_bar_horizontal_margin"
-            style="@style/ToastBarStyle" />
-    </FrameLayout>
+    <include layout="@layout/alarm_empty_view" />
+
 </FrameLayout>

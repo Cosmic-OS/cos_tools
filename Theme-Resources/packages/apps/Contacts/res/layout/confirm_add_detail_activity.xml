@@ -19,8 +19,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_view"
     android:orientation="vertical"
-    android:visibility="invisible"
+    android:visibility="gone"
     style="@style/ConfirmAddDetailViewStyle">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="18dp"
+        android:textSize="20dip"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="@string/activity_title_confirm_add_detail"/>
 
     <!--
       The header contains the contact photo, name, a link to the contact card, and
@@ -44,7 +55,7 @@
             android:layout_alignRight="@id/photo"
             android:layout_alignStart="@id/photo"
             android:layout_alignEnd="@id/photo"
-            android:background="#7F000000" />
+            android:background="@color/photo_text_bar_bg" />
 
         <ImageButton
             android:id="@+id/open_details_button"
@@ -81,7 +92,7 @@
                 android:paddingLeft="8dip"
                 android:paddingStart="8dip"
                 android:gravity="center_vertical"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_color_white"
                 android:textSize="16sp"
                 android:singleLine="true" />
 
@@ -94,7 +105,7 @@
                 android:paddingStart="8dip"
                 android:gravity="center_vertical"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_color_white"
                 android:singleLine="true"
                 android:paddingBottom="4dip"
                 android:visibility="gone" />

@@ -16,58 +16,72 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_clock_frame"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/view_background"
-    android:elevation="@dimen/header_elevation" >
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/clock_fragment_end_padding">
+
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <com.android.deskclock.AnalogClock
             android:id="@+id/analog_clock"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/circle_margin_top"
-            android:layout_marginLeft="@dimen/analog_clock_margin"
-            android:layout_marginStart="@dimen/analog_clock_margin"
-            android:layout_marginRight="@dimen/analog_clock_margin"
+            android:layout_marginBottom="@dimen/bottom_text_spacing_analog"
             android:layout_marginEnd="@dimen/analog_clock_margin"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/bottom_text_spacing_analog" />
+            android:layout_marginLeft="@dimen/analog_clock_margin"
+            android:layout_marginRight="@dimen/analog_clock_margin"
+            android:layout_marginStart="@dimen/analog_clock_margin"
+            android:layout_marginTop="@dimen/circle_margin_top"
+            android:dial="@drawable/clock_analog_dial_mipmap"
+            android:hand_hour="@drawable/clock_analog_hour_mipmap"
+            android:hand_minute="@drawable/clock_analog_minute_mipmap" />
+
         <TextClock
             android:id="@+id/digital_clock"
+            style="@style/big_thin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
             android:format12Hour="@string/main_clock_12_hours_format"
             android:format24Hour="@string/clock_24_hours_format"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:singleLine="true"
-            android:ellipsize="none"
-            style="@style/big_light" />
+            android:textColor="@color/clock_white"
+            android:textSize="@dimen/main_clock_font_size" />
+
     </FrameLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:background="@color/hot_blue" >
-        <TextView android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="@color/white" />
-        <TextView android:id="@+id/nextAlarm"
+            android:textAppearance="@style/PrimaryLabelTextAppearance" />
+
+        <TextView
+            android:id="@+id/nextAlarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dip"
             android:layout_marginStart="8dip"
             android:drawablePadding="2dip"
-            android:drawableLeft="@drawable/ic_alarm_small"
             android:drawableStart="@drawable/ic_alarm_small"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="@color/white" />
+            android:textAppearance="@style/SecondaryLabelTextAppearance" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/hairline"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hairline_height"
+        android:layout_marginTop="24dip"
+        android:background="@color/hairline" />
 </LinearLayout>
 

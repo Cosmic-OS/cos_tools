@@ -13,65 +13,69 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingStart="@dimen/alert_dialog_padding_material"
-    android:paddingEnd="@dimen/alert_dialog_padding_material"
-    android:paddingTop="@dimen/alert_dialog_padding_material"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="8dip"
+    android:paddingRight="8dip" >
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:text="@string/cities_add_city_city" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="@string/cities_add_city_city" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/add_city_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="24dp"
+            android:imeOptions="actionDone|flagNoFullscreen"
+            android:inputType="textNoSuggestions"
+            android:maxLength="255"
+            android:paddingLeft="32dp"
+            android:scrollHorizontally="true"
+            android:selectAllOnFocus="true" >
+
+            <requestFocus />
+        </EditText>
 
         <ImageButton
             android:id="@+id/add_city_gps"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_alignBottom="@id/add_city_name"
+            android:layout_alignTop="@id/add_city_name"
+            android:layout_margin="8dp"
+            android:background="@drawable/holo_selector_nonfocusable"
             android:contentDescription="@string/cities_add_city_gps_cd"
-            android:src="@drawable/ic_gps"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"/>
+            android:gravity="center"
+            android:src="@drawable/ic_gps" />
+    </RelativeLayout>
 
-        <EditText
-            android:id="@+id/add_city_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionDone|flagNoFullscreen"
-            android:scrollHorizontally="true"
-            android:selectAllOnFocus="true"
-            android:gravity="center_vertical"
-            android:inputType="textNoSuggestions"
-            android:textColor="@color/text_color_light" >
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:text="@string/cities_add_city_timezone" />
 
-    <LinearLayout
+    <com.android.deskclock.worldclock.TimeZoneSpinner
+        android:id="@+id/add_city_tz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="12dp"
-        android:orientation="horizontal" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="@string/cities_add_city_timezone" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="left|center_vertical"
+        android:paddingTop="5dp"
+        android:spinnerMode="dropdown" />
 
-        <Spinner
-            android:id="@+id/add_city_tz"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical" />
-    </LinearLayout>
 </LinearLayout>

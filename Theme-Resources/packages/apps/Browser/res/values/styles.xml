@@ -30,13 +30,13 @@
         <item name="android:colorAccent">@color/accent</item>
     </style>
     <style name="PreferencesTheme" parent="@android:Theme.Material.Light.DarkActionBar">
-      <item name="android:colorPrimary">@color/primary</item>
-      <item name="android:colorPrimaryDark">@color/primary_dark</item>
-      <item name="android:colorAccent">@color/accent</item>
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
     </style>
     <style name="DialogWhenLarge" parent="@android:style/Theme.Material.DialogWhenLarge" >
         <item name="android:windowActionBar">false</item>
-        <item name="android:popupBackground">#fafafa</item>
+        <item name="android:popupBackground">@color/white</item>
     </style>
     <style name="BookmarkTheme" parent="@android:Theme.Material">
         <item name="android:colorPrimary">@color/primary</item>
@@ -56,13 +56,13 @@
         <item name="android:displayOptions"></item>
     </style>
     <style name="Suggestions" parent="@android:style/Widget.Material.AutoCompleteTextView">
-        <item name="android:popupBackground">#fafafa</item>
+        <item name="android:popupBackground">@color/white</item>
         <item name="android:dropDownVerticalOffset">0dip</item>
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
         <item name="android:textColorHint">?android:attr/textColorHintInverse</item>
     </style>
     <style name="Widget.UrlInputView" parent="BrowserTheme">
-        <item name="android:colorAccent">@color/accent</item>
+        <!--item name="android:colorAccent">@color/accent</item-->
     </style>
     <style name="SuggestionLineMedium"
             parent="@android:style/TextAppearance.Material.Medium">
@@ -84,8 +84,8 @@
     <style name="HoloIcon">
         <item name="android:layout_marginLeft">16dip</item>
     </style>
-    <style name="HoloButton">
-        <item name="android:background">?android:attr/selectableItemBackground</item>
+    <style name="BrowserButton">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="android:paddingLeft">8dip</item>
         <item name="android:paddingRight">8dip</item>
     </style>
