@@ -81,14 +81,14 @@ declare -a res=('assets' 'menu*' 'values-*' 'xml*' 'interpolator' 'raw*' 'anim' 
 
 declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'attrs.xml' 'attrs_manifest.xml' 'bookmarks_icons.xml' 'bools.xml' 'config.xml' 'defaults.xml' 'donottranslate.xml' 'donottranslate_config.xml'
                    'aliases.xml' 'crop_colors.xml' 'dslv_attrs.xml' 'animation_constants.xml' 'donottranslate-cldr.xml' 'donottranslate-maps.xml' 'donottranslate-names.xml' 'donottranslate_material.xml'
-                   'donottranslate-search_engines.xml' 'du_arrays.xml' 'du_strings.xml' 'du_symbols.xml' 'fractions.xml' 'ids.xml' 'integers.xml' 'internal.xml' 'keys.xml' 'lland_config.xml' 'lland_strings.xml' 'plurals.xml'
-                   'public.xml' 'strings.xml' 'symbols.xml' 'vpi_attrs.xml' 'vpi_defaults.xml' 'cm_arrays.xml' 'cm_plurals.xml' 'cm_strings.xml' 'custom_strings.xml' 'custom_arrays.xml' 'vpi__defaults.xml' 'vpi__attrs.xml'
+                   'donottranslate-search_engines.xml' 'custom_arrays.xml' 'custom_strings.xml' 'custom_symbols.xml' 'fractions.xml' 'ids.xml' 'integers.xml' 'internal.xml' 'keys.xml' 'lland_config.xml' 'lland_strings.xml' 'plurals.xml'
+                   'public.xml' 'strings.xml' 'symbols.xml' 'vpi_attrs.xml' 'vpi_defaults.xml' 'cm_arrays.xml' 'cm_plurals.xml' 'cm_strings.xml' 'vpi__defaults.xml' 'vpi__attrs.xml'
                    'nontranslatables.xml' 'accountprovider.xml' 'constants.xml' 'codeaurora_strings.xml' 'filtershow_ids.xml' 'filtershow_strings.xml' 'filtershow_values.xml' 'filtershow_values_attrs.xml')
 
 declare -a core=('java' 'jni' 'tests')
 
-declare -a theme_packages=('Browser' 'Calculator' 'Calendar' 'SnapdragonCamera' 'Contacts' 'ContactsCommon' 'DUI' 'DeskClock' 'Dialer' 'Email' 'Gallery2'
-                           'Launcher3' 'Messaging' 'OmniSwitch' 'PhoneCommon' 'Settings' 'Stk')
+declare -a theme_packages=('Browser' 'Calculator' 'Calendar' 'SnapdragonCamera' 'CosmicOTA' 'Contacts' 'ContactsCommon' 'DUI' 'DeskClock' 'Dialer' 'Email'
+                           'Galaxy' 'Gallery2''Launcher3' 'Messaging' 'OmniSwitch' 'OmniStyle' 'PhoneCommon' 'Settings' 'Stk')
 
 cd $WORKING_DIR
 echo "Removing files so we can clean sync"
