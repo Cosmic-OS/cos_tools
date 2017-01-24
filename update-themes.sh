@@ -88,7 +88,7 @@ declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'at
 declare -a core=('java' 'jni' 'tests')
 
 declare -a theme_packages=('Browser' 'Calculator' 'Calendar' 'SnapdragonCamera' 'CosmicOTA' 'Contacts' 'ContactsCommon' 'DUI' 'DeskClock' 'Dialer' 'Email'
-                           'Galaxy' 'Gallery2''Launcher3' 'Messaging' 'OmniSwitch' 'OmniStyle' 'PhoneCommon' 'Settings' 'Stk')
+                           'Galaxy' 'Gallery2' 'Launcher3' 'Messaging' 'OmniSwitch' 'OmniStyle' 'PhoneCommon' 'Settings' 'Stk')
 
 cd $WORKING_DIR
 echo "Removing files so we can clean sync"
